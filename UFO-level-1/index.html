@@ -20,31 +20,18 @@
 and comment at the very least. -->
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-info mb-3">
         <div class="container">
             <a class="navbar-brand" href="#">Aliens-R-Real</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
           <span class="navbar-toggler-icon"> </span>
         </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-
                 <form class="form-inline ml-auto">
-                    <input type="text" class="form-control mr-2" placeholder="Search" />
-                    <button class="btn btn-outline-success">Search</button>
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="form-control mr-2" placeholder="date/time d/m/y" />
+                    <button class="btn bg-warning btn-outline-success" onkeyup="myFunction()">
+              Search
+            </button>
                 </form>
             </div>
         </div>
@@ -56,34 +43,39 @@ and comment at the very least. -->
                 The extra-terrestrial menace has come to Earth
             </h2>
         </div>
-        <div class="row">
-            <div class="column col-md-12">
-                <img src="https://images.unsplash.com/photo-1564855101177-b3fac36e00e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2978&q=80" class="img-fluid" />
-            </div>
+        <div class="row-hl">
+            <div class="column col-md-12"></div>
         </div>
     </div>
     <br />
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">UFO Sighting</h1>
-                <!-- UFO table -->
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>date/time</th>
-                            <th>city</th>
-                            <th>state</th>
-                            <th>country</th>
-                            <th>shape</th>
-                            <th>time</th>
-                            <th>comment</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
+
+
         </div>
+        <div class="col-md-12">
+            <!-- <media class="mr-3 mt-3" width: 10%>
+                    <img src="https://images.unsplash.com/photo-1564855101177-b3fac36e00e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2978&q=80" class="img-fluid" />
+
+                </media> -->
+            <h1 class="text-center">UFO Sighting</h1>
+            <!-- UFO table -->
+            <table id="myTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>date/time</th>
+                        <th>city</th>
+                        <th>state</th>
+                        <th>country</th>
+                        <th>shape</th>
+                        <th>time</th>
+                        <th>comment</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
     </div>
 </body>
 <script src="static/js/data.js"></script>

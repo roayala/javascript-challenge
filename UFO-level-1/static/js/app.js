@@ -9,36 +9,6 @@ data.forEach(function(ufoReport) {
     console.log(ufoReport);
 });
 
-// // Step 2:  Use d3 to append one table row `tr` for each weather report object
-// // Don't worry about adding cells or text yet, just try appending the `tr` elements.
-// data.forEach(function(weatherReport) {
-//   console.log(weatherReport);
-//   var row = tbody.append("tr");
-// });
-
-// // Step 3:  Use `Object.entries` to console.log each weather report value
-// data.forEach(function(weatherReport) {
-//   console.log(weatherReport);
-//   var row = tbody.append("tr");
-
-//   Object.entries(weatherReport).forEach(function([key, value]) {
-//     console.log(key, value);
-//   });
-// });
-
-// // Step 4: Use d3 to append 1 cell per weather report value (weekday, date, high, low)
-// data.forEach(function(weatherReport) {
-//   console.log(weatherReport);
-//   var row = tbody.append("tr");
-
-//   Object.entries(weatherReport).forEach(function([key, value]) {
-//     console.log(key, value);
-//     // Append a cell to the row for each value
-//     // in the weather report object
-//     var cell = row.append("td");
-//   });
-// });
-
 // // Step 5: Use d3 to update each cell's text with
 // // weather report values (weekday, date, high, low)
 data.forEach(function(ufoReport) {
@@ -52,6 +22,28 @@ data.forEach(function(ufoReport) {
         cell.text(value);
     });
 });
+
+function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
 
 // BONUS: Refactor to use Arrow Functions!
 // data.forEach(weatherReport => {
